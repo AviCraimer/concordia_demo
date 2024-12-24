@@ -1,3 +1,7 @@
+# Concordia DeepMind Demo and Learning
+
+This repo is part of my work at Indiana University's ESOTERIC lab. Learning and experimenting with Google DeepMind's Concordia library for simulating agents in a social world.
+
 ## Using vevn:
 
 ~/shared_python_venvs/ai
@@ -17,13 +21,3 @@ Install my own package
 
 Single Command
 `pip install -r dev-requirements.txt && pip install -r requirements.txt && pip install -e .`
-
-## To Run Jupyter Notebook
-
-jupyter notebook
-
-## Type Hints
-
-To make some type annoations work properly you need to add:
-`from __future__ import annotations`
-At the top of the file.
