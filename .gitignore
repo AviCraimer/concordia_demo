@@ -1,0 +1,9 @@
+venv/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.vscode/
+**/secret.py
+untracked
+*.egg-info
+.env
