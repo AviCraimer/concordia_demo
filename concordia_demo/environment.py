@@ -13,5 +13,5 @@ def get_required_env_var(env_var_name: str) -> str:
     return value
 
 
-openai_api_key = get_required_env_var("OPENAI_API_KEY")
+# openai_api_key = get_required_env_var("OPENAI_API_KEY")
 anthropic_api_key = get_required_env_var("ANTHROPIC_API_KEY")

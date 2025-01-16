@@ -2,17 +2,22 @@ import anthropic
 from anthropic.types import Message, MessageParam, TextBlock, ContentBlock
 
 from typing import Tuple
+
+from httpx import request
 from concordia_demo.environment import anthropic_api_key
 
 
 type ChatMessage = dict[str, str]  # {"role": str, "content": str}
+
+# model_name = "claude-3-5-sonnet-latest"
+model_name = "claude-3-5-haiku-latest"
 
 
 # Core Claude interaction
 class ClaudeClient:
 
     def __init__(
-        self, api_key: str = anthropic_api_key, model: str = "claude-3-5-sonnet-latest"
+        self, api_key: str = anthropic_api_key, model: str = model_name
     ):
         self.client = anthropic.Anthropic(api_key=api_key)
         self.model = model
@@ -82,4 +87,15 @@ class ClaudeClient:
 
 
 # A ready made instance of ClaudeClient, for any text completion task that doesn't need special options this can be used.
+
 claude_client = ClaudeClient()
+
+
+# Print a list of the current model names
+# models = request("GET", "https://api.anthropic.com/v1/models", headers={
+#     "x-api-key": anthropic_api_key,
+#     "anthropic-version": "2023-06-01",
+#     "Content-Type": "application/json",
+# }
+#  )
+# print(models.text)
